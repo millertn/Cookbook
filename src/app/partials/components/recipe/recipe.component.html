@@ -1,0 +1,55 @@
+<div class="recipe">
+    <div class="recipe-header">
+      <div class="recipe-name">
+            {{recipe?.name}}
+        </div>
+        <div class="recipe-favorite" role="button" aria-label="Favorite Recipe" tabindex="0" (click)="toggleFavorite($event)">
+            <mat-icon>star_rate</mat-icon>
+        </div>
+    </div>
+    <div class="recipe-img">
+        <img [src]="recipe?.image">
+    </div>
+    <div class="recipe-desc">
+        {{recipe?.description}}
+    </div>
+    <div class="recipe-footer">
+        <app-link>
+            <mat-icon>visibility</mat-icon>
+        </app-link>
+    </div>
+
+    <!-- <p appTestDirective>
+        testMe
+    </p> -->
+
+    <!-- NOTE: both of these are valid due to how attributes and interpolation work -->
+    <!-- NOTE: ex with multiple properties being set on the directive -->
+    <!-- <p appBetterTest [defaultColor]="'pink'" hilightColor="purple">
+        testMe2
+    </p> -->
+
+    <!-- NOTE: ex with aliasing the directive selector as an input if you just have one thing to set on the directive -->
+    <!-- <p appBetterTest="purple">
+        testMe2
+    </p> -->
+
+    <!-- <p [appBetterTest]="'purple'">
+        testMe2
+    </p> -->
+
+    <!-- NOTE this is how templates work with ngIf because template are already designed to utilize the * stuff -->
+
+    <!-- <ng-template [ngIf]="false">
+        this checks for template
+    </ng-template> -->
+
+    <!-- NOTE: this is using our structural directive -->
+    <!-- <ng-template [appUnless]="false">
+        this checks for template
+    </ng-template>
+
+    <div *appUnless="false">
+        test Me
+    </div> -->
+</div>
